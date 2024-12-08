@@ -1,5 +1,6 @@
 package com.openclassrooms.notes.data.repository
 
+import com.openclassrooms.notes.data.model.Note
 import com.openclassrooms.notes.data.service.LocalNotesApiService
 import com.openclassrooms.notes.data.service.NotesApiService
 import kotlinx.coroutines.flow.Flow
@@ -18,7 +19,7 @@ class NotesRepository {
     /**
      * A flow that emits a list of all notes.
      */
-    val notes: Flow<List<Note<String, String>>> = flow {
+    val notes: Flow<List<Note>> = flow {
         emit(notesApiService.getAllNotes())
     }
 }
