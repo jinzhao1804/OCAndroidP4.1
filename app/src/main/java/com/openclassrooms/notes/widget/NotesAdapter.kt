@@ -9,13 +9,13 @@ import com.openclassrooms.notes.databinding.NoteBinding
  * An adapter for displaying a list of notes in a RecyclerView.
  * @param notes The list of notes to display.
  */
-class NotesAdapter(private var notes: List<Pair<String, String>>) : RecyclerView.Adapter<NoteViewHolder>() {
+class NotesAdapter(private var notes: List<Note<String, String>>) : RecyclerView.Adapter<NoteViewHolder>() {
 
     /**
      * Updates the list of notes displayed by the adapter.
      * @param newNotes The new list of notes to display.
      */
-    fun updateNotes(newNotes: List<Pair<String, String>>) {
+    fun updateNotes(newNotes: List<Note<String, String>>) {
         notes = newNotes
         notifyDataSetChanged()
     }

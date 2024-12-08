@@ -18,7 +18,7 @@ class NotesRepository {
     /**
      * A flow that emits a list of all notes.
      */
-    val notes: Flow<List<Pair<String, String>>> = flow {
+    val notes: Flow<List<Note<String, String>>> = flow {
         emit(notesApiService.getAllNotes())
     }
 }

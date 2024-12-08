@@ -13,7 +13,7 @@ class NoteViewHolder(private val binding: NoteBinding): RecyclerView.ViewHolder(
      * Binds the view holder to a note.
      * @param note The note to bind to the view holder.
      */
-    fun bind(note: Pair<String, String>) {
+    fun bind(note: Note<String, String>) {
         binding.title.text = note.first
         binding.body.text = note.second
     }
