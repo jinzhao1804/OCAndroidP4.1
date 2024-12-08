@@ -1,4 +1,4 @@
-package com.openclassrooms.notes.widget
+package com.openclassrooms.notes.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

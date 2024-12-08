@@ -14,7 +14,7 @@ class NotesRepository {
     /**
      * The API service for interacting with notes.
      */
-    private val notesApiService: NotesApiService = LocalNotesApiService()
+    var notesApiService: NotesApiService = LocalNotesApiService()
 
     /**
      * A flow that emits a list of all notes.

@@ -40,6 +40,16 @@ android {
 
 dependencies {
 
+
+    // Mockito-Kotlin for Kotlin support
+    implementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
+// JUnit for testing
+    implementation("junit:junit:4.13.2")
+
+// Coroutines test dependency (for testing suspending functions and flows)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0")
+
     val lifecycle_version = "2.8.7"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 

@@ -3,7 +3,7 @@ package com.openclassrooms.notes.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.openclassrooms.notes.data.repository.NotesRepository
-import com.openclassrooms.notes.widget.NotesAdapter
+import com.openclassrooms.notes.ui.NotesAdapter
 import kotlinx.coroutines.launch
 
 class NoteViewModel(
