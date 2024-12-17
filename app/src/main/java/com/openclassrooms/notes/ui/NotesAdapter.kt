@@ -34,3 +34,20 @@ class NotesAdapter(private var notes: List<Note>) : RecyclerView.Adapter<NoteVie
         holder.bind(note)
     }
 }
+
+/**
+ * A view holder for displaying a note in a RecyclerView.
+ * @param binding The binding for the note layout.
+ */
+class NoteViewHolder(private val binding: NoteBinding): RecyclerView.ViewHolder(binding.root) {
+
+    /**
+     * Binds the view holder to a note.
+     * @param note The note to bind to the view holder.
+     */
+    fun bind(note: Note) {
+        binding.title.text = note.title
+        binding.body.text = note.body
+    }
+
+}

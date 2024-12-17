@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.openclassrooms.notes.databinding.ActivityMainBinding
 import com.openclassrooms.notes.data.repository.NotesRepository
-import com.openclassrooms.notes.viewmodel.NoteViewModel
+import com.openclassrooms.notes.ui.viewmodel.NoteViewModel
 import com.openclassrooms.notes.ui.NoteItemDecoration
 import com.openclassrooms.notes.ui.NotesAdapter
 

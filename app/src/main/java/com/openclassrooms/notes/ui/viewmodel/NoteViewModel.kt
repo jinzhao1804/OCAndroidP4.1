@@ -1,4 +1,4 @@
-package com.openclassrooms.notes.viewmodel
+package com.openclassrooms.notes.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
