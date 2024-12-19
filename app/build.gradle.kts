@@ -52,6 +52,8 @@ dependencies {
 
     val lifecycle_version = "2.8.7"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation ("androidx.activity:activity-ktx:1.9.3")  // For 'by viewModels()' in Activities
+
 
 
     implementation("androidx.core:core-ktx:1.9.0")

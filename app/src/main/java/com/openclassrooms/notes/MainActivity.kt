@@ -2,12 +2,14 @@ package com.openclassrooms.notes
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.openclassrooms.notes.databinding.ActivityMainBinding
 import com.openclassrooms.notes.data.repository.NotesRepository
 import com.openclassrooms.notes.ui.viewmodel.NoteViewModel
 import com.openclassrooms.notes.ui.NoteItemDecoration
 import com.openclassrooms.notes.ui.NotesAdapter
+import kotlinx.coroutines.launch
 
 /**
  * The main activity for the app.
@@ -23,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private val notesRepository = NotesRepository()
 
-    private val noteViewModel = NoteViewModel(notesRepository,notesAdapter)
+    private val noteViewModel = NoteViewModel(notesRepository)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +35,20 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
         initFABButton()
-        noteViewModel.collectNotes()
+        observeNotes()
 
     }
 
+
+    private fun observeNotes() {
+        noteViewModel.collectNotes()
+        lifecycleScope.launch {
+            noteViewModel.allNotes.collect { notes ->
+                // Update the RecyclerView adapter with the collected notes
+                notesAdapter.updateNotes(notes)
+            }
+        }
+    }
 
     /**
      * Initializes the FAB button.
